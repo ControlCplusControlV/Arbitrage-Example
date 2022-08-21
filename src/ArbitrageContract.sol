@@ -28,12 +28,9 @@ contract ArbitrageContract {
 		address true_pool,
 		uint256 amountIn 
 	  ) payable external {
-		bool OneToTwo;
-		uint256 repay;
-		assembly {
-			// Stack should still be clean with this
-			OneToTwo := callvalue()
-
+			bool OneToTwo;
+			uint256 repay;
+			assembly {
 			mstore(0x69, 0x0902f1ac)
 
 			pop(
@@ -57,6 +54,8 @@ contract ArbitrageContract {
 
 			// Instead of doing an overflow check at each operation
 			// I just didn't so either use Yul+ where it is is safe, or do a specific check
+
+			OneToTwo := callvalue()
 
 			if OneToTwo {
 				new_r0 := sub(reserve0, amountIn)
