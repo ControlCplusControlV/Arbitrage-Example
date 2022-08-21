@@ -15,19 +15,19 @@ contract ArbitrageContract {
 
 	*/
 
-  address immutable UNIFACTORY;
-  address immutable SUSHIROUTER;
-  uint256 constant MAX_UINT = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+	  address immutable UNIFACTORY;
+	  address immutable SUSHIROUTER;
+	  uint256 constant MAX_UINT = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
 
-  constructor(address factory, address router) {
-	UNIFACTORY = factory;
-	SUSHIROUTER = router;
-  }
+	  constructor(address factory, address router) {
+		UNIFACTORY = factory;
+		SUSHIROUTER = router;
+	  }
 
-  function arbitrageMarket(
-	address true_pool,
-	uint256 amountIn 
-  ) payable external {
+	  function arbitrageMarket(
+		address true_pool,
+		uint256 amountIn 
+	  ) payable external {
 		bool OneToTwo;
 		uint256 repay;
 		assembly {
