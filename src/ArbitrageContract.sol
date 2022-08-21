@@ -4,16 +4,13 @@ import "./interfaces/ISushi.sol";
 import "./interfaces/IERC20.sol";
 
 contract ArbitrageContract {
-    // One of the best once said that Smart Contracts are like Sushi, and require care as such. This one follows that motto,
-    // like a roll of Sushi at an expensive restaraunt, it has taken great care to take your money from you
-
     /* Flashswap Arbitrage is a bit weird, but here is how it goes
 
-		1. Take in amountIn and OneToTwo, in addition to a target pool, and a true pool, which we will arb against
-		2. Flashloan amountIn from true pool, trading it into target pool
-		3. Repay amount from target pool minus profit to true LP
+	1. Take in amountIn and OneToTwo, in addition to a target pool, and a true pool, which we will arb against
+	2. Flashloan amountIn from true pool, trading it into target pool
+	3. Repay amount from target pool minus profit to true LP
 
-	*/
+    */
 
     address immutable UNIFACTORY;
     address immutable SUSHIROUTER;
