@@ -71,6 +71,7 @@ contract ArbitrageContract {
         address token0 = SushiPair(msg.sender).token0(); // fetch the address of token0
         address token1 = SushiPair(msg.sender).token1(); // fetch the address of token1
 
+	// You can calc this without the external call btw, it just involves hashing the factory init code and can be confusing to put in an example
         require(msg.sender == SushiFactory(UNIFACTORY).getPair(token0, token1)); // ensure that msg.sender is a V2 pair
         require(sender == address(this));
 
